@@ -12,6 +12,7 @@ public class Main {
         Lottery lottery = new Lottery();
         int numberInput;
         int baseNumber = 1;
+
         gameIntro();
         gameRewards();
 
@@ -34,7 +35,7 @@ public class Main {
 
 
         // Print out player lucky picked numbers
-        System.out.println("Base number pick: "+Arrays.toString(basePick.toArray())+" Lucky number pick: "+luckyPick);
+        System.out.println("Base number picked: "+Arrays.toString(basePick.toArray())+" Lucky number picked: "+luckyPick);
 
 
         // Checking how many base numbers match
@@ -43,6 +44,8 @@ public class Main {
         // Checking if the lottery number match
         boolean luckyNumberMatch = lottery.checkLuckyNumber(luckyPick);
         System.out.println("Lucky Number Match: "+luckyNumberMatch);
+
+        lottery.calculateCoinsWin();
 
     }
     public static void gameIntro(){
@@ -58,7 +61,7 @@ public class Main {
         System.out.println("=====================================================================");
         System.out.println("= Match All: \t\t\t\t\t\t\t\t 100,000 Lucky Coins");
         System.out.println("= Match Lucky Number and Two Base Numbers: \t 50,000 Lucky Coins");
-        System.out.println("= Match All Base Numbers : \t\t\t\t\t 1,000 Lucky Coins ");
+        System.out.println("= Match All Base Numbers : \t\t\t\t\t 5,000 Lucky Coins ");
         System.out.println("= Match Only Lucky Number: \t\t\t\t\t 500 Lucky Coins ");
         System.out.println("=====================================================================");
     }

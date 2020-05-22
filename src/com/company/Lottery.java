@@ -8,10 +8,28 @@ public class Lottery {
     private ArrayList<Integer> baseNumbersGenerated = new ArrayList<>(Arrays.asList(3,67,23,12));
     // Random generated a lucky number
     private int luckyNumberGenerated = 56;
-    private int luckyNumberHit = 0;
+    private boolean luckyNumberHit;
     private int baseNumberHit = 0;
-    private int hitsPoints = 0;
 
+    public void calculateCoinsWin(){
+        if(luckyNumberHit == false){
+            if(baseNumberHit  != 4){
+                System.out.println("Sorry No Luck This Time");
+            }else{
+                System.out.println("Earn: 5,000 Coins");
+            }
+        }
+        if(luckyNumberHit == true){
+            if(baseNumberHit == 0){
+                System.out.println("Earn: 500 Coins");
+            }else if(baseNumberHit == 4){
+                System.out.println("Earn: 100,000 Coins");
+            }else{
+                System.out.println("Earn: 5,000 Coins");
+            }
+        }
+
+    }
 
     public int checkBaseNumber(ArrayList basePickNumbers){
         for(int i=0; i<basePickNumbers.size(); i++){
@@ -23,9 +41,10 @@ public class Lottery {
     }
     public boolean checkLuckyNumber(int pickedLuckyNumber){
         if(pickedLuckyNumber == luckyNumberGenerated){
-            return true;
+            luckyNumberHit = true;
+            return luckyNumberHit;
         }
-        return false;
+        return luckyNumberHit;
     }
 
 }
