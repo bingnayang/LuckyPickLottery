@@ -60,7 +60,8 @@ public class Main {
     public static void gameRewards(){
         System.out.println("=====================================================================");
         System.out.println("= Match All: \t\t\t\t\t\t\t\t 100,000 Lucky Coins");
-        System.out.println("= Match Lucky Number and Two Base Numbers: \t 50,000 Lucky Coins");
+        System.out.println("= Match Lucky Number and Three Base Numbers: \t 50,000 Lucky Coins");
+        System.out.println("= Match Lucky Number and Two Base Numbers: \t 25,000 Lucky Coins");
         System.out.println("= Match All Base Numbers : \t\t\t\t\t 5,000 Lucky Coins ");
         System.out.println("= Match Only Lucky Number: \t\t\t\t\t 500 Lucky Coins ");
         System.out.println("=====================================================================");
