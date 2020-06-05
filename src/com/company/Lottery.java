@@ -14,9 +14,21 @@ public class Lottery {
     private int rewardCoins;
 
     public Lottery() {
-        this.baseNumbersGenerated = new ArrayList<>(Arrays.asList(3,67,23,12));
+//        this.baseNumbersGenerated = new ArrayList<>(Arrays.asList(3,67,23,12));
+        this.baseNumbersGenerated = new ArrayList<>();
+        setBaseGenerated();
         this.luckyNumberGenerated = 1 + (int)(Math.random()*((100-1+1)+1));
         this.rewardCoins = 0;
+    }
+
+    public void setBaseGenerated() {
+        Random rand = new Random();
+        int picked;
+
+        for(int i=0; i<4; i++){
+            picked = rand.nextInt(100);
+            baseNumbersGenerated.add(picked);
+        }
     }
 
     public void calculateCoinsWin(){
