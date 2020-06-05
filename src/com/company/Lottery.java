@@ -2,37 +2,45 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Lottery {
     // Random generate four base numbers
-    private ArrayList<Integer> baseNumbersGenerated = new ArrayList<>(Arrays.asList(3,67,23,12));
+    private ArrayList<Integer> baseNumbersGenerated;
     // Random generated a lucky number
-    private int luckyNumberGenerated = 56;
+    private int luckyNumberGenerated;
     private boolean luckyNumberHit;
-    private int baseNumberHit = 0;
+    private int baseNumberHit;
     private int rewardCoins;
 
+    public Lottery() {
+        this.baseNumbersGenerated = new ArrayList<>(Arrays.asList(3,67,23,12));
+        this.luckyNumberGenerated = 1 + (int)(Math.random()*((100-1+1)+1));
+        this.rewardCoins = 0;
+    }
+
     public void calculateCoinsWin(){
-//        switch (rewardCoins){
-//            case 50:
-//                System.out.println("Nice!! Earn: 500 Coins");
-//                break;
-//            case 80:
-//                System.out.println("Good Job!! Earn: 5,000 Coins");
-//                break;
-//            case 90:
-//                System.out.println("Great !! Earn: 25,000 Coins");
-//                break;
-//            case 110:
-//                System.out.println("Awesome!! Earn: 50,000 Coins");
-//                break;
-//            case 130:
-//                System.out.println("BINGO!! Earn: 100,000 Coins");
-//                break;
-//            default:
-//                System.out.println("No Luck This Time");
-//                break;
-//        }
+        switch (rewardCoins){
+            case 50:
+                System.out.println("Nice!! Earn: 500 Coins");
+                break;
+            case 80:
+                System.out.println("Good Job!! Earn: 5,000 Coins");
+                break;
+            case 90:
+                System.out.println("Great !! Earn: 25,000 Coins");
+                break;
+            case 110:
+                System.out.println("Awesome!! Earn: 50,000 Coins");
+                break;
+            case 130:
+                System.out.println("BINGO!! Earn: 100,000 Coins");
+                break;
+            default:
+                System.out.println("No Luck This Time");
+                break;
+        }
+        // For Testing
         System.out.println(rewardCoins);
     }
 
@@ -47,11 +55,16 @@ public class Lottery {
     }
     public boolean checkLuckyNumber(int pickedLuckyNumber){
         if(pickedLuckyNumber == luckyNumberGenerated){
-            rewardCoins += 100;
+            rewardCoins += 50;
             luckyNumberHit = true;
             return luckyNumberHit;
         }
         return luckyNumberHit;
+    }
+
+    public void printWinningNumbers(){
+        System.out.println("=========Lucky Lottery Winning Number=========");
+        System.out.println("Base number: "+Arrays.toString(baseNumbersGenerated.toArray())+" Lucky number: "+luckyNumberGenerated);
     }
 
 }

@@ -33,11 +33,11 @@ public class Main {
         System.out.println("Enter the lucky *lucky* number: ");
         int luckyPick = scanner.nextInt();
 
-
         // Print out player lucky picked numbers
-        System.out.println("Base number picked: "+Arrays.toString(basePick.toArray())+" Lucky number picked: "+luckyPick);
+        System.out.println("=========Customer Lucky Lottery Ticket=========");
+        System.out.println("Base number: "+Arrays.toString(basePick.toArray())+" Lucky number: "+luckyPick);
 
-
+        // For Testing
         // Checking how many base numbers match
         int baseNumberMatch = lottery.checkBaseNumber(basePick);
         System.out.println("Base Number Match Hits: "+baseNumberMatch);
@@ -45,7 +45,11 @@ public class Main {
         boolean luckyNumberMatch = lottery.checkLuckyNumber(luckyPick);
         System.out.println("Lucky Number Match: "+luckyNumberMatch);
 
+
+        // Print out customer lottery ticket and rewards
         lottery.calculateCoinsWin();
+        // Print out lottery winning numbers
+        lottery.printWinningNumbers();
 
     }
     public static void gameIntro(){
